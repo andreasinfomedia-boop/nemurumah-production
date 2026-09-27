@@ -1,0 +1,13 @@
+services:
+  nemurumah:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - nemurumah_data:/app/data
+      - nemurumah_uploads:/app/public/uploads
+volumes:
+  nemurumah_data:
+  nemurumah_uploads:
